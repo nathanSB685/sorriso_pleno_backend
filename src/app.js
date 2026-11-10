@@ -6,6 +6,12 @@ import { pool } from "./db/pool.js";
 import { naoEncontrada, tratarErros } from "./middleware/error.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import pacientesRoutes from "./modules/pacientes/pacientes.routes.js";
+import dentistasRoutes from "./modules/dentistas/dentistas.routes.js";
+import salasRoutes from "./modules/salas/salas.routes.js";
+import {
+  especialidades,
+  procedimentos,
+} from "./modules/catalogo/catalogo.routes.js";
 
 export const app = express();
 
@@ -20,6 +26,10 @@ app.get("/health", async (req, res) => {
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/pacientes", pacientesRoutes);
+app.use("/api/v1/dentistas", dentistasRoutes);
+app.use("/api/v1/salas", salasRoutes);
+app.use("/api/v1/especialidades", especialidades);
+app.use("/api/v1/procedimentos", procedimentos);
 
 app.use(naoEncontrada);
 app.use(tratarErros);
