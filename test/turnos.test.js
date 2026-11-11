@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { temSobreposicao } from "../sorriso-pleno-backend-modulo2/src/utils/turnos.js";
+import { temSobreposicao } from "../src/utils/turnos.js";
 
 test("dois turnos no mesmo dia sem sobreposição", () => {
   assert.equal(

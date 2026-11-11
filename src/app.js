@@ -12,6 +12,8 @@ import {
   especialidades,
   procedimentos,
 } from "./modules/catalogo/catalogo.routes.js";
+import consultasRoutes from "./modules/consultas/consultas.routes.js";
+import anamneseRoutes from "./modules/prontuario/anamnese.routes.js";
 
 export const app = express();
 
@@ -25,11 +27,13 @@ app.get("/health", async (req, res) => {
 });
 
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/pacientes/:pacienteId/anamnese", anamneseRoutes);
 app.use("/api/v1/pacientes", pacientesRoutes);
 app.use("/api/v1/dentistas", dentistasRoutes);
 app.use("/api/v1/salas", salasRoutes);
 app.use("/api/v1/especialidades", especialidades);
 app.use("/api/v1/procedimentos", procedimentos);
+app.use("/api/v1/consultas", consultasRoutes);
 
 app.use(naoEncontrada);
 app.use(tratarErros);
