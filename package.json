@@ -11,6 +11,7 @@
     "start": "node src/server.js",
     "migrate:prod": "node src/db/migrate.js",
     "criar-usuario": "node src/db/criar-usuario.js",
+    "seed-base": "node src/db/seed-base.js",
     "seed": "node --env-file=.env src/db/seed.js",
     "test": "node --test"
   },
