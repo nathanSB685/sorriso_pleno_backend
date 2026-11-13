@@ -15,6 +15,7 @@ import {
 import consultasRoutes from "./modules/consultas/consultas.routes.js";
 import anamneseRoutes from "./modules/prontuario/anamnese.routes.js";
 import financeiroRoutes from "./modules/financeiro/financeiro.routes.js";
+import whatsappRoutes from "./modules/whatsapp/whatsapp.routes.js";
 
 export const app = express();
 
@@ -36,6 +37,7 @@ app.use("/api/v1/especialidades", especialidades);
 app.use("/api/v1/procedimentos", procedimentos);
 app.use("/api/v1/consultas", consultasRoutes);
 app.use("/api/v1/pagamentos", financeiroRoutes);
+app.use("/api/v1/whatsapp", whatsappRoutes);
 
 app.use(naoEncontrada);
 app.use(tratarErros);
